@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Posts</title>
+{% endblock %}
+
+
+{% block body %}
+
+<br>
+
+<div>
+
+    <h1 style="display: inline-block;">Flask/Bootstrap Blog Posts</h1>
+
+    <a class="btn btn-success" style="float: right;" href="/posts/new_post"> + New Post</a>
+
+</div>
+
+<i>It works now...</i>
+
+<hr>
+
+
+{% for post in dummy_post %}
+
+<br>
+
+<h2> {{ post.title }} </h2>
+
+
+
+{% if post.author %}
+<small>Written By : {{ post.author }} on {{ post.date_posted}}</small>
+
+{% else %}
+<small>Written By : Unknown on {{ post.date_posted}}</small>
+
+<br>
+<br>
+
+{% endif %}
+
+<br>
+<br>
+
+<p style="white-space: pre-wrap;"> {{ post.content }} </p>
+
+<br>
+
+<a type="button" class="btn btn-danger" href="/posts/delete/{{ post.id }}">Delete</a>
+<a type="button" class="btn btn-warning" href="/posts/edit/{{ post.id }}">Edit</a>
+
+<br>
+<br>
+
+<hr>
+{% endfor %}
+
+
+
+{% endblock %}

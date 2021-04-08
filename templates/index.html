@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+
+<br>
+
+<h1>Home Page</h1>
+<i>It works now...</i>
+
+<br>
+<br>
+
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>Flask Blog Posts</h1>
+            <p>This is an example of a Blog Post using Flask. It also Bootstrap, which is very cool. I am glad I have
+                the chance to learn about these wonderful things.</p>
+            <p>
+                <a class="btn btn-primary" href="/posts" role="button">View Blog Posts &raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
